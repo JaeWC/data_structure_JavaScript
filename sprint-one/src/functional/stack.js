@@ -1,27 +1,37 @@
-var Stack = function() {
-  var someInstance = {};
+var Stack = function () {
+  var someInstance = {}
 
   // Use an object with numeric keys to store values
-  var storage = {};
-  var count = 0;
+  var storage = {}
+  var count = 0
 
   // Implement the methods below
-  someInstance.push = function(value) {
-    count++;
-  };
 
-  someInstance.pop = function() {
-  };
+  // Add a string to the top of the stack
+  someInstance.push = function (value) {
+    count++
+    storage[count] = value
+  }
 
-  someInstance.size = function() {
-    return count;
-  };
+  // Remove and return the string on the top of the stack
+  someInstance.pop = function () {
+    if (count > 0) {
+      var returnVal = storage[count]
+      count--
+      return returnVal
+    }
+  }
 
-  return someInstance;
-};
+  // Return the number of items in the queue
+  someInstance.size = function () {
+    if (count >= 0) return count
+  }
 
-if ( typeof module === "object" && typeof module.exports === "object" ) {
+  return someInstance
+}
+
+if (typeof module === 'object' && typeof module.exports === 'object') {
   module.exports = {
     Stack
-  };
-}
+  }
+};
