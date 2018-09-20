@@ -14,7 +14,6 @@ var treeMethods = {}
 // takes any value, sets that as the targets of a node, and adss that nodes as a child of the tree
 treeMethods.addChild = function (value) {
   this.children.push(new Tree(value))
-  console.log(this)
 }
 
 // takes any input and returns a boolean reflecting whether it can be found as the value of the target node or any descendant node
