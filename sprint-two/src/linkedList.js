@@ -13,7 +13,6 @@ var LinkedList = function () {
       this.head.next = node
       this.tail = node
     }
-    console.log(list)
   }
 
   // removes the first node from the list and returns its value
