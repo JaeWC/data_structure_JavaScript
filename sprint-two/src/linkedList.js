@@ -5,30 +5,37 @@ var LinkedList = function () {
 
   // takes a value and adds it to the end of the list
   list.addToTail = function (value) {
+    var node = new Node(value)
     if (this.head === null) {
-      this.head = new Node(value)
+      this.head = node
       this.tail = this.head
     } else {
-      this.tail = new Node(value)
+      this.head.next = node
+      this.tail = node
     }
+    console.log(list)
   }
 
   // removes the first node from the list and returns its value
   list.removeHead = function () {
     var removedVal = list.head.value
-    delete list.head
-    this.head = list.tail
+
+    this.head = list.head.next
+
     return removedVal
   }
 
   // returns boolean reflecting whether or not the passsed-in value is in the linked list
   list.contains = function (target) {
-    for (var prop in this) {
-      if (this[prop].value === target) {
-        return true
+    var node = this.head
+    var contained = false
+    while (node) {
+      if (node.value === target) {
+        contained = true
       }
+      node = node.next
     }
-    return false
+    return contained
   }
   return list
 }
