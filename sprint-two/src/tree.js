@@ -20,6 +20,7 @@ treeMethods.addChild = function (value) {
 treeMethods.contains = function (target) {
   var contained = false
 
+  // Bredth Depth Search Algorithm
   var recursion = function (tree) {
     for (var i = 0; i < tree.children.length; i++) {
       if (tree.children[i].value === target) {
@@ -29,6 +30,19 @@ treeMethods.contains = function (target) {
       }
     }
   }
+
+  // Bredth First Search Algorithm
+
+  // var recursion = function (tree) {
+  //   var hasNode = _.pluck(tree.children, 'value').includes(target)
+  //   if (hasNode) {
+  //     contained = true
+  //   } else {
+  //     for (let child of tree.children) {
+  //       recursion(child, target)
+  //     }
+  //   }
+  // }
 
   recursion(this)
   return contained
