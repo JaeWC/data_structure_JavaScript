@@ -1,3 +1,4 @@
+/*
 if ( typeof module === "object" && typeof module.exports === "object" ) {
   require('mocha');
   var chai = require('chai');
@@ -32,3 +33,4 @@ describe('set', function() {
   });
 
 });
+*/

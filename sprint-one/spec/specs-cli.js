@@ -2,6 +2,7 @@
   let verifyClass, chai;
   if ( typeof module === "object" && typeof module.exports === "object" ) {
     require('mocha');
+    _ = require('../../lib/underscore/underscore.js');
     chai = require('chai');
     verifyClass = require('./verifyClass');
   }
