@@ -26,8 +26,6 @@ binaryMethods.insert = function (input) {
     }
   }
   recursion(this)
-
-  console.log(this)
 }
 
 // accepts a value and returns a boolean reflecting whether or not the value is contained in the tree
